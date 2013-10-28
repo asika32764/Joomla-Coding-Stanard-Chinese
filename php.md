@@ -25,9 +25,9 @@
 
 我們必須秉持並實踐 PHP 5.3 以上所支持的物件導向設計模式。Joomla! 一直致力於讓原始碼符合 E_STRICT 標準。
 
-## Global Variables
+## 全域變數
 
-Usage of global variables should be kept to a minimum. Use OOP and factory patterns instead.
+盡量減少使用全域變數或超全域變數，用物件導向或工廠(Factory)模式替代之。
 
 ## Control Structures
 
