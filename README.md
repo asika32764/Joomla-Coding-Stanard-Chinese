@@ -8,3 +8,14 @@ The Joomla coding standard Chinese version.
 3. [Comments - 註解](comments.md)
 4. [PHP - 編碼標準](php.md)
 
+-----
+
+## 提交翻譯 
+
+請先到 Issue 中發起您想要翻譯的 [檔案] 與 [章節]，避免大家重複工作。
+
+翻譯完成後，請發出 Pull-Request 並用井號 (#) 連結原有的 Issue。
+
+## 現有貢獻者
+
+* Asika - @asika32764
