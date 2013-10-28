@@ -4,22 +4,22 @@
 
 永遠使用長標籤： `<?php ?>` 來包裹 PHP 程式碼，不使用短標籤 `<? ?>`。這可以確保您的程式碼可執行在大多數未經設定的主機環境。
 
-如果檔案中只包含PHP程式碼，則不應該包含結尾標籤 `?>`。這個標籤在 PHP 中不是必要的。這樣子可以避免在系統輸出前，不小心讓任何空白預先送出 header ，這會造成 Joomla 的 Session 功能錯誤 (see the PHP manual on [Instruction separation](http://php.net/basic-syntax.instruction-separation))。
+如果檔案中只包含PHP程式碼，則不應該包含結尾標籤 `?>`。這個標籤在 PHP 中不是必要的。這樣子可以避免在系統輸出前，不小心讓任何空白預先送出 header ，這會造成 Joomla 的 Session 功能錯誤 (參見 PHP 手冊的說明 [Instruction separation](http://php.net/basic-syntax.instruction-separation))。
 
 檔案結尾必須永遠由一個空行結束。
 
 ### 引入程式
 
-Anywhere you are unconditionally including a file, use `require_once`. Anywhere you are conditionally including a file (for example, factory methods), use `include_once`. Either of these will ensure that files are included only once. They share the same file list, so you don't need to worry about mixing them. A file included with `require_once` will not be included again by `include_once`.
+當您想要無條件引入一個檔案時，應使用 `require_once`。當您要有條件的引入一個檔案（例如 factory 類別與其方法），則用 `include_once`。這兩者都可以確保檔案不被二次載入。兩種用法共享檔案清單，所以混用不會有任何問題。被 `require_once` 引入的檔案不會再被 `include_once` 引入一次。
 
-> **Note**
+> **注意**
 >
-> `include_once` and `require_once` are PHP language statements, not functions. The correct formatting is:
+> `include_once` 與 `require_once` 是 PHP 關鍵字，不是函式，寫法應該如下:
 >
 >
 > `require_once JPATH_COMPONENT . ’/helpers/helper.php’;`
 
-You should not enclose the filename in parentheses.
+您不應該把檔案路徑用括號包起來。
 
 ### E_STRICT Compatible PHP Code
 
