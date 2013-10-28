@@ -21,9 +21,9 @@
 
 您不應該把檔案路徑用括號包起來。
 
-### E_STRICT Compatible PHP Code
+### 兼容 E_STRICT 的 PHP 程式
 
-Adhering to object oriented programming practice as supported by PHP 5.3+ is required. Joomla is committed to progressively making the source code E_STRICT.
+我們必須秉持並實踐 PHP 5.3 以上所支持的物件導向設計模式。Joomla! 一直致力於讓原始碼符合 E_STRICT 標準。
 
 ## Global Variables
 
