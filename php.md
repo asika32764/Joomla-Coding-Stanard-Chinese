@@ -161,7 +161,7 @@ $options = array(
 //$code = broken($fixme);
 ```
 
-### Comment Docblocks
+### 文件區塊註解
 
 Documentation headers for PHP and Javascript code in files, classes, class properties, methods and functions, called the docblocks, follow a convention similar to JavaDoc or phpDOC.
 
