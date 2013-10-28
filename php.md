@@ -148,18 +148,16 @@ $options = array(
 );
 ```
 
-## Code Commenting
+## 註解
 
-Inline comments to explain code follow the convention for C (`/* … */`) and C++ single line (`// ...`) comments. C-style blocks are generally restricted to documentation headers for files, classes and functions. The C++ style is generally used for making code notes. Code notes are strongly encouraged to help other people, including your future-self, follow the purpose of the code. Always provide notes where the code is performing particularly complex operations.
+行內註解可用 C 語言風格的 `/* ... */` 或 C++ 的單行註解 `// ...`。 C 風格的註解通常被用在文件開頭、類別、函式等等的文件標頭。而 C++ 風格單行註解則常用在程式解釋與提醒。註解對於幫助其他開發人員理解程式碼的目的有非常大的幫助，甚至包含您自己也能受惠。當程式碼開始進行複雜操作時，永遠記得要加上註解。至於 Perl 與 Shell 的井號 (`#`)註解則不建議使用，目前在 PHP 中也不再允許此類註解。
 
-Perl/shell style comments (`#`) are not permitted in PHP files.
+您可以在某些情況下藉由註解掉整段程式碼或類別函式以用於調整程式功能，但應該在最終提交到核心前去除這些註解或不再需要的程式區塊。
 
-Blocks of code may, of course, be commented out for debugging purposes using any appropriate format, but should be removed before submitting patches for contribution back to the core code.
-
-For example, do not include feature submissions like:
+例如，不要在提交的程式碼中包含以下片段:
 
 ```php
-// Must fix this code up one day.
+// 這段程式碼未來需要修復
 //$code = broken($fixme);
 ```
 
