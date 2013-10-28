@@ -1,14 +1,14 @@
-## Language Constructs
+## 語言結構
 
-### PHP Code Tags
+### PHP 標籤
 
-Always use the full `<?php ?>` to delimit PHP code, not the `<? ?>` shorthand. This is the most portable way to include PHP code on differing operating systems and setups.
+永遠使用標籤： `<?php ?>` 來包裹 PHP 程式碼，不使用短標籤 `<? ?>`。這可以確保您的程式碼可執行在大多數未經設定的主機環境。
 
-For files that contain only PHP code, the closing tag (`?>`) should not be included. It is not required by PHP. Leaving this out prevents trailing white space from being accidentally injected into the output that can introduce errors in the Joomla session (see the PHP manual on [Instruction separation](http://php.net/basic-syntax.instruction-separation)).
+如果檔案中只包含PHP程式碼，則不應該包含結尾標籤 `?>`。這個標籤在 PHP 中不是必要的。這樣子可以避免在系統輸出前，不小心讓任何空白預先送出 header ，這會造成 Joomla 的 Session 功能錯誤 (see the PHP manual on [Instruction separation](http://php.net/basic-syntax.instruction-separation))。
 
-Files should always end with a blank new line.
+檔案結尾必須永遠由一個空行結束。
 
-### Including Code
+### 引入程式
 
 Anywhere you are unconditionally including a file, use `require_once`. Anywhere you are conditionally including a file (for example, factory methods), use `include_once`. Either of these will ensure that files are included only once. They share the same file list, so you don't need to worry about mixing them. A file included with `require_once` will not be included again by `include_once`.
 
