@@ -1,4 +1,4 @@
-Joomla Coding Stanard Chinese
+Joomla 編碼標準中文版
 =============================
 
 The Joomla coding standard Chinese version.
