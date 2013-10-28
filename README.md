@@ -6,7 +6,7 @@ The Joomla coding standard Chinese version.
 1. [Preface - 前言](preface.md) (完成)
 2. [Basic Guidelines - 基礎導覽](basic-guidelines.md)
 3. [Comments - 註解](comments.md)
-4. [PHP - 編碼標準](php.md) (翻譯中 #1)
+4. [PHP - 編碼標準](php.md) (翻譯中 [#1](https://github.com/asika32764/Joomla-Coding-Stanard-Chinese/issues/1))
 
 -----
 
