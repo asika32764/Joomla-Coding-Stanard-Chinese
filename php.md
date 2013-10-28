@@ -29,13 +29,13 @@
 
 盡量減少使用全域變數或超全域變數，用物件導向或工廠(Factory)模式替代之。
 
-## Control Structures
+## 控制結構
 
-For all control structures there is a space between the keyword and an opening parenthesis, then no space either after the opening parenthesis or before the closing bracket. This is done to distinguish control keywords from function names. All control structures must contain their logic within braces.
+所有的控制結構必須在關鍵字與起始括號之間放置一個空白字元，而開頭、結尾括號與邏輯判斷式之間無空格。這是為了區隔控制結構與函式以方便辨認，而括號內必須要包含邏輯。
 
-For all all control structures, such as `if`, `else`, `do`, `for`, `foreach`, `try`, `catch`, `switch` and `while`, both the keyword starts a newline and the opening and closing braces are each put on a new line.
+所有的控制結構關鍵字，如： `if`, `else`, `do`, `for`, `foreach`, `try`, `catch`, `switch` 與 `while` 皆採 [Allman](http://en.wikipedia.org/wiki/Indent_style#Allman_style) 風格，關鍵字本身必須在一個新行，而語言區塊（大括號）的開頭與結束也接需再一個新行中。
 
-### An _if-else_ Example
+### _if-else_ 範例
 
 ```php
 if ($test)
@@ -56,7 +56,7 @@ else
 }
 ```
 
-If a control structure goes over multiple lines, all lines must be indented with one tab and the closing brace must go on the same line as the last parameter.
+如果控制結構的判斷式需要多行，則第二行開始需要一個 Tab 縮排，結尾括號需要再同一行上。
 
 ```php
 if ($test1
@@ -66,7 +66,7 @@ if ($test1
 }
 ```
 
-### A _do-while_ Example
+### _do-while_ 範例
 
 
 ```php
@@ -77,7 +77,7 @@ do
 while ($i < 10);
 ```
 
-### A _for_ Example
+### _for_ 範例
 
 ```php
 for ($i = 0; $i < $n; $i++)
@@ -86,7 +86,7 @@ for ($i = 0; $i < $n; $i++)
 }
 ```
 
-### A _foreach_ Example
+### _foreach_ 範例
 
 ```php
 foreach ($rows as $index => $row)
@@ -95,7 +95,7 @@ foreach ($rows as $index => $row)
 }
 ```
 
-### A _while_ Example
+### _while_ 範例
 
 ```php
 while (!$done)
@@ -104,9 +104,9 @@ while (!$done)
 }
 ```
 
-### A _switch_ example
+### _switch_ 範例
 
-When using a `switch` statement, the `case` keywords are indented. The `break` statement starts on a newline assuming the indent of the code within the case.
+當使用 `switch` 時， `case` 關鍵字必須縮排一次，而 `break` 關鍵字必須獨立在新的一行，且相較於 `case` 再縮排一次。
 
 ```php
 switch ($value)
