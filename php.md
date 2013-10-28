@@ -43,8 +43,8 @@ if ($test)
 	echo 'True';
 }
 
-// Comments can go here.
-// Note that "elseif" as one word is used.
+// 註解可寫在此
+// 要注意的是 "elseif" 採用單一單字而非拆開成 "else if"
 
 elseif ($test === false)
 {
@@ -121,19 +121,19 @@ switch ($value)
 }
 ```
 
-## References
+## 參照
 
-When using references, there should be a space before the reference operator and no space between it and the function or variable name.
+當使用變數參照時，參照符號應該距離等號一個空白字元，且跟後面的變數緊鄰，沒有空白。
 
-For example:
+範例:
 
 ```php
 $ref1 = &$this->sql;
 ```
 
-> **Note**
+> **注意**
 >
-> In PHP 5, reference operators are not required for objects. All objects are handled by reference.
+> 在 PHP 5 ，物件不再需要參照符號，所有物件皆是參照。
 
 ## Arrays
 
