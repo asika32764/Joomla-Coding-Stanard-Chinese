@@ -3,7 +3,7 @@ Joomla 編碼標準中文版
 
 The Joomla coding standard Chinese version.
 
-1. [Preface - 前言](preface.md)
+1. [Preface - 前言](preface.md) (完成)
 2. [Basic Guidelines - 基礎導覽](basic-guidelines.md)
 3. [Comments - 註解](comments.md)
 4. [PHP - 編碼標準](php.md)
