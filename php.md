@@ -135,11 +135,11 @@ $ref1 = &$this->sql;
 >
 > 在 PHP 5 ，物件不再需要參照符號，所有物件皆是參照。
 
-## Arrays
+## 陣列
 
-Assignments (the `=>` operator) in arrays may be aligned with tabs. When splitting array definitions onto several lines, the last value may also have a trailing comma. This is valid PHP syntax and helps to keep code diffs minimal.
+陣列元素的指派可稍微排版，當多行時，可用 Tab 縮排。每行跟隨一個都逗號結尾，最後一行可包含逗號，這是 PHP 允許的寫法，對於程式碼 diff 比對時也有所幫助。
 
-For example:
+範例:
 
 ```php
 $options = array(
