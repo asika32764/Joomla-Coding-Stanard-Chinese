@@ -1,23 +1,25 @@
-## Basic Guidelines
+## 基礎大綱
 
-This chapter outlines the basic guidelines that cover and files.
+本章節旨在說明基礎的檔案規則
 
-## File Format
+## 檔案格式
 
-All files contributed to Joomla must be stored as ASCII text, use UTF-8 character encoding and be Unix formatted. Lines must end only with a line feed (LF). Line feeds are represented as ordinal 10, octal 012 and hex 0A. Do not use carriage returns (CR) like Macintosh computers do or the carriage return/line feed combination (CRLF) like Windows computers do.
+所有針對 Joomla 開發的檔案格式都必須存為 ASCII text、使用 UTF-8 編碼字型並且經過 Unix 格式化。以行為單位的程式碼必須使用換行字元(LF)作為結尾。換行字元的表示法為：10(序數)、012(八進位)、0A(十六進位)。不要使用純CR回車符(例如蘋果電腦)或是CRLF組合(例如windows電腦)。
 
-## Spelling
+## 拼字
 
-The spelling of words and terms used in code comments and in the naming of class, functions, variables and constant should generally be in accordance with British English rules (en\_GB). However, some exceptions are permitted, for example where common programming names are used that align with the PHP API or other established conventions such as for “color” where is it common practice to maintain US English spelling.
+所有使用在程式碼註解、類別、函式、變數、常數的命名原則都必須根據英式英文(en_GB)原則。但例外是存在的，例如一般常用的 PHP API 命名原則或是像 ”color” 這樣已制定的用法便可沿用美式英文
 
-## Indenting
+## 縮排
 
-Tabs are used for indenting code (not spaces as required by the PEAR standard). Source code editors or Integrated Development Environments (IDE’s) such as Eclipse must have the tab-stops for indenting measuring four (4) spaces in length.
+縮排一律使用 Tab 鈕(根據國際 PEAR 準則)。編碼時使用的 IDE 如 Eclipse 需設定 Tab 為4個空白字元長度。
 
-## Line Length
+## 行寬
 
-There is no maximum limit for line lengths in files, however, a notional value of about 150 characters is recommended to achieve a good level of readability without horizontal scrolling. Longer lines are permitted if the nature of the code for individual lines requires it and line breaks would have an adverse affect on the final output (such as for mixed PHP/HTML layout files).
+原則上每行程式碼並沒有最大長度限制，但根據國際標準值，150字元能夠在不需要水平滾動的狀況下達到最好的可讀性。若遇到換行會影響輸出結果的情況(例如 PHP/HTML 混合的結構檔案)，更長的程式碼也是被允許的。
 
-## Best Practices
+## 實作
 
-TODO Any words of wisdom about PHP best practice, maybe even references for design patterns? Can/should we link out to the JRD, Doc wiki and Developer site for additional resources?
+編寫任何對於 PHP 範例的忠實建議, 例如設計模式的文獻，它 該不該/可不可 以為了更多的資源而連結到外部的 JRD 、Doc wiki 或是開發者網站呢？
+
+這部分不是很了解他的意思  — Tim
