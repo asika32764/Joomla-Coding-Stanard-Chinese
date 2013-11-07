@@ -217,18 +217,18 @@ $medium = bar('medium');
 $long   = bar('long');
 ```
 
+## 函數定義
 ## Function Definitions
 
-Function definitions start on a new line and the opening and closing braces are also placed on new lines. An empty line should precede lines specifying the return value.
+函數定義需開始並獨立於一新行，開始與結束的括號也需分別被放置於一新行。在負責處理回傳值的程式碼前應插入一空行。
 
-Function definitions must include a documentation comment in accordance with the Commenting section of this document.
+函數定義必須包含註解說明，根據本文件中的註解章節所規範之規則予以撰寫。
 
--   Short description (required, followed by a blank line)
--   Long description (optional, followed by a blank line)
--   `@param` (required if there are method or function arguments, the last `@param` tag is followed by a blank line)
--   `@return` (required, followed by a blank line)
--   All other tags in alphabetical order, however @since is always required.
-
+-   簡易說明 (必要，結束需空一行)
+-   完整說明 (選填，結束需空一行)
+-   `@param` (若function有參數則此欄位為必要，並於最後一個`@param`標簽之後新增一空行)
+-   `@return` (必要，結束需空一行)
+-   其餘標簽依據字母順序排列，需注意@since標簽永遠為必要。
 
 ```php
 /**
@@ -249,8 +249,7 @@ function jimport($path)
 }
 ```
 
-If a function definition goes over multiple lines, all lines must be indented with one tab and the closing brace must go on the same line as the last parameter.
-
+如果一個函數定義橫跨數行，第二行起的每一行皆需以一個tab作縮排，結束括號需與最後一個參數存在於同一行。
 
 ```php
 function fooBar($param1, $param2,
@@ -260,40 +259,41 @@ function fooBar($param1, $param2,
 }
 ```
 
-## Class Definitions
+## 類別定義
 
-Class definitions start on a new line and the opening and closing braces are also placed on new lines. Class methods must follow the guidelines for Function Definitions. Properties and methods must follow OOP standards and be declared appropriately (using public, protected, private and static as applicable).
+類別定義需開始並獨立於一新行，開始與結束的括號也需被分別放置於一新行。類別方法(Class Methods)需根據函數定義標準來撰寫。類別的屬性及方法需根據物件導向(OOP)標準適當宣告(使用適合的public, protected, private 和 static等屬性)
 
-Class definitions, properties and methods must each be provided with a DocBlock in accordance with the following sections.
+類別的定義、屬性及方法皆需撰寫對應的註解區塊(DocBlock)，根據接下來的準則規範。
 
-### Class DocBlock Headers
+### 類別註解區塊標頭
 
-The class Docblock consists of the following required and optional elements in the fol-lowing order.
+類別註解區塊包含以下必要及非必要欄位，並依照下列順序排列。
 
--   Short description (required, unless the file contains more than two classes or functions), followed by a blank line).
--   Long description (optional, followed by a blank line).
--   `@category` (optional and rarely used)
--   `@package` (required)
--   `@subpackage` (optional)
--   `@author` (optional but only permitted in non-Joomla source files, for example, included third-party libraries like Geshi)
--   `@copyright` (optional unless different from the file Docblock)
--   `@license` (optional unless different from the file Docblock)
--   `@deprecated` (optional)
--   `@link` (optional)
--   `@see` (optional)
--   `@since` (required, being the version of the software the class was introduced)
+-   簡易說明(必要，除非該檔案擁有兩個以上之類別或函數)
+-   完整說明(選填，結束需空一行)
+-   `@category` (選填，很少用到)
+-   `@package` (必要)
+-   `@subpackage` (選填)
+-   `@author` (選填，但只允許在非joomla的程式碼中，舉例來說，如：使用第三方函式庫如Geshi)
+-   `@copyright` (選填，除非與檔案文件註解表頭(file Docblock)不同)
+-   `@license` (選填，除非與檔案文件註解表頭(file Docblock)不同)
+-   `@deprecated` (選填)
+-   `@link` (選填)
+-   `@see` (選填)
+-   `@since` (必填, 根據類別第一次出現時的程式版本號)
 
-### Class Property DocBlocks
+### 類別屬性註解區塊
 
-The class property Docblock consists of the following required and optional elements in the following order.
+類別屬性註解區塊包含以下必要及非必要欄位，並依照下列順序排列。
 
--   Short description (required, followed by a blank line)
--   `@var` (required, followed by the property type)
--   `@deprecated` (optional)
--   `@since` (required)
+-   簡易說明(必要，除非該檔案擁有兩個以上之類別或函數)
+-   `@var` (必要，於該屬性後其後註明屬性種類(property type))
+-   `@deprecated` (選填)
+-   `@since` (必填)
 
-### Class Method DocBlocks
+### 類別方法註解區塊
 
+類別方法註解區塊是依據PHP函式之規則做撰寫(如上述)。
 The DocBlock for class methods follows the same convention as for PHP functions (see above).
 
 ```php
