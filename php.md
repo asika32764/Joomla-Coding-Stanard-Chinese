@@ -387,75 +387,75 @@ Regular variables, follow the same conventions as function.
 
 Class variables should be set to null or some other appropriate default value.
 
-## Exception Handling
+## 例外處理
 
-Exceptions should be used for error handling.
+例外處理應當只用於錯誤處理上。
 
-The following sections outline how to semantically use [SPL exceptions](http://php.net/manual/en/spl.exceptions.php).
+下面的章節將指出如何照語意使用 [SPL exceptions](http://php.net/manual/en/spl.exceptions.php)。
 
-### Logic Exceptions
+### 邏輯例外
 
-The LogicException is thrown when there is an explicit problem with the way the API is being used. For example, if a dependency has failed (you try to operate on an object that has not been loaded yet).
+在 API 的使用方式上發生的明確問題會丟出 LogicException 的例外。例如：如果有個依賴參數失效時（你試圖操作一個未被載入的物件）。
 
-The following child classes can also be used in appropriate situations:
+下方的子類別也可被用於適當的情境下：
 
 #### BadFunctionCallException
 
-This exception can be thrown if a callback refers to an undefined function or if some arguments are missing. For example if `is_callable()`, or similar, fails on a function.
+如果一個 callback 參照到一個未定義的函式(function) 或是缺少了一些參數時可以丟出該例外。例如：如果 `is_callable()` 或其他類似的函式用在一個函式(function)上時得到失敗的結果。
 
 #### BadMethodCallException
 
-This exception can be thrown if a callback refers to an undefined method or if some arguments are missing. For example `is_callable()`, or similar, fails on a class method.  Another example might be if arguments passed to a magic call method are missing.
+如果一個 callback 參照到一個未定義的方法(method) 或是缺少了一些參數時可以丟出該例外。例如：如果 `is_callable()` 或其他類似的函式用在一個方法(method)上時得到失敗的結果。 另一個例子可能是找不到某些使用魔術方法的參數。
 
 #### InvalidArgumentException
 
-This exception can be thrown if there is invalid input.
+當有不合規格的輸入發生時丟出該例外。
 
 #### DomainException
 
-This exception is similar to the InvalidArgumentException but can be thrown if a value does not adhere to a defined valid data domain. For example trying to load a database driver of type "mongodb" but that driver is not available in the API.
+該例外和 InvalidArgumentException 類似，但會在一數值未依附在一已定義的有效資料群的情形下丟出該例外。例如：試圖載入一個"mongodb"的資料庫引擎，但該引擎無法使用在 API 下。
 
 #### LengthException
 
-This exception can be thrown is a length check on an argument fails. For example a file signature was not a specific number of characters.
+當作一參數的長度檢查失敗時丟出該例外。例如：一個檔案的雜湊值不是一個指定長度的字串。
 
 #### OutOfRangeException
 
-This exception has few practical applications but can be thrown when an illegal index was requested.
+該例外較少被實際的應用，但可在存取一個非法的索引值時丟出該例外。
 
-### Runtime Exceptions
+### Runtime 例外
 
-The RuntimeException is thrown when some sort of external entity or environment causes a problem that is beyond your control providing the input is valid. This exception is the default case for when the cause of an error can't explicitly be determined. For example you tried to connect to a database but the database was not available (server down, etc).  Another example might be if an SQL query failed.
+在外部實體或環境造成你無法控制的問題所產生的錯誤輸入時丟出 RuntimeException 的例外。當一個錯誤的產生不能明確地被判斷出來時，預設丟出該例外。例如：你試圖連到資料庫但資料庫卻無法使用 (伺服器掛掉之類的)。另一個例子可能為 SQL 查詢語句的錯誤。
 
 #### UnexpectedValueException
 
-This type of exception should be used when an unexpected result is encountered. For example a function call returned a string when a boolean was expected.
+當一個非預期的結果發生時應當丟出該種類的例外。例如：當一個函式預期是要回傳布林值卻回傳字串時。
 
 #### OutOfBoundsException
 
-This exception has few practical applications but may be thrown if a value is not a valid key.
+該例外較少實際的應用，但也許當某個值不為合法的索引值時丟出該例外。
 
 #### OverflowException
 
-This exception has few practical applications but may be thrown when you add an element into a full container.
+該例外較少實際的應用，但也許當你加入一個元素到已經滿載的容器物件時丟出該例外。
 
 #### RangeException
 
-This exception has few practical applications but may be thrown to indicate range errors during program execution. Normally this means there was an arithmetic error other than under/overflow. This is the runtime version of DomainException.
+該例外較少實際的應用，但也許在程式執行期間丟出該例外以指出一個範圍的錯誤。通常這是指除了運算虧位/溢位之外的錯誤。該例外為 DomainException 的 runtime 版本。
 
 #### UnderflowException
 
-This exception has few practical applications but may thrown when you try to remove an element of an empty container.
+該例外較少實際的應用，但也許當你從一個空的容器物件中移除一個元素時丟出該例外。
 
-### Documenting exceptions
+### 例外處理的文件撰寫
 
-Each function or method must annotate the type of exception that it throws using an @throws tag and any downstream exceptions types that are thrown. Each type of exception need only be annotated once. No description is necessary.
+每個函式(function)或方法(method)必須要註解使用到的例外，用 @throws 的標籤和丟出例外的物件名稱作註解。每種例外只須備被註解一次。註解的說明非必須。
 
-## SQL Queries
+## SQL 查詢語句
 
-SQL keywords are to be written in uppercase, while all other identifiers (with the exception of quoted text obviously) is to be in lowercase.
+SQL 的保留字要全用大寫，其他的文字符號 (當然被引號包起來的文字為例外) 為小寫。
 
-All table names should use the `#__` prefix rather than `jos_` to access Joomla content and allow for the user defined database prefix to be applied. Queries should also use the JDatabaseQuery API.
+全部的 table 名稱必須要用 `#__` 的前綴字而不是用 `jos_` 去讀取 Joomla 的內容，並允許替換為使用者定義的資料庫前綴字。查詢語句也必須使用 JDatabaseQuery API。
 
 ```php
 // Get the database connector.
