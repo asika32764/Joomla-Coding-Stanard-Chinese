@@ -455,7 +455,7 @@ Class variables should be set to null or some other appropriate default value.
 
 SQL 的保留字要全用大寫，其他的文字符號 (當然被引號包起來的文字為例外) 為小寫。
 
-全部的 table 名稱必須要用 ‵#__‵ 的前綴字而不是用 ‵jos_‵ 去讀取 Joomla 的內容，並允許替換為使用者定義的資料庫前綴字。查詢語句也必須使用 JDatabaseQuery API。
+全部的 table 名稱必須要用 `#__` 的前綴字而不是用 `jos_` 去讀取 Joomla 的內容，並允許替換為使用者定義的資料庫前綴字。查詢語句也必須使用 JDatabaseQuery API。
 
 ```php
 // Get the database connector.
