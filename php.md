@@ -177,22 +177,22 @@ Code contributed to the Joomla project that will become the copyright of the pro
 
 Files included from third party sources must leave DocBlocks intact. Layout files use the same DocBlocks as other PHP files.
 
-### File DocBlock Headers
+### 檔案文件標頭註解
 
-The file header DocBlock consists of the following required and optional elements in the following order:
+文件標頭註解有以下內容且按照順序
 
--   Short description (optional unless the file contains more than two classes or functions), followed by a blank line).
--   Long description (optional, followed by a blank line).
--   `@category` (optional and rarely used)
--   `@package` (generally optional but required when files contain only procedural code)
--   `@subpackage` (optional)
--   `@author` (optional but only permitted in non-Joomla source files, for example, included third-party libraries like Geshi)
--   `@copyright` (required)
--   `@license` (required and must be compatible with the Joomla license)
--   `@deprecated` (optional)
--   `@link` (optional)
--   `@see` (optional)
--   `@since` (generally optional but required when files contain only procedural code)
+-   簡易說明 (選填, 除非超過兩個以上類別或方法) 結束空一行.
+-   完整說明 (選填) 結束空一行.
+-   `@category` (選填)
+-   `@package` (選填, 如果只有這份程式碼可不填)
+-   `@subpackage` (選填)
+-   `@author` (選填, 但只允許在非的Joomla源文件，例如，包括第三方庫)
+-   `@copyright` (必填)
+-   `@license` (必填且必須是兼容的Joomla許可證)
+-   `@deprecated` (選填)
+-   `@link` (選填)
+-   `@see` (選填)
+-   `@since` (通常是選填，但時所需的文件只包含程序代碼)
 
 ```
 /**
@@ -203,31 +203,31 @@ The file header DocBlock consists of the following required and optional element
  */
 ```
 
-## Function Calls
+## 方法呼叫
 
-Functions should be called with no spaces between the function name and the opening parenthesis, and no space between this and the first parameter; a space after the comma between each parameter (if they are present), and no space between the last parameter and the closing parenthesis. There should be space before and exactly one space after the equals sign. Tab alignment over multiple lines is permitted.
+呼叫方法時, 方法名稱跟參數括號中不能有空白, 而第一個帶入參數也不得有空白; 每個參數逗點後一個空白隔開 (如果有的話), 最後一個參數跟括號沒有空格. 參數帶值等號前後需有空白. 可以多行對齊.
 
 ```php
-// An isolated function call.
+// 單方法呼叫
 $foo = bar($var1, $var2);
 
-// Multiple aligned function calls.
+// 多方法呼叫
 $short  = bar('short');
 $medium = bar('medium');
 $long   = bar('long');
 ```
 
-## Function Definitions
+## 宣告方法
 
-Function definitions start on a new line and the opening and closing braces are also placed on new lines. An empty line should precede lines specifying the return value.
+宣告方法需換新行, 且開括號與結束括號接需換行. 一個空行需指定返回值.
 
-Function definitions must include a documentation comment in accordance with the Commenting section of this document.
+宣告方法需含有註解, 且按照註解規則.
 
--   Short description (required, followed by a blank line)
--   Long description (optional, followed by a blank line)
--   `@param` (required if there are method or function arguments, the last `@param` tag is followed by a blank line)
--   `@return` (required, followed by a blank line)
--   All other tags in alphabetical order, however @since is always required.
+-   簡易說明 (必填, 後空行)
+-   完整說明 (選填, 後空行)
+-   `@param` (必填, 在 `@param` 空格 參數型態 空格 參數名稱 空格 功能)
+-   `@return` (必填, 前後需空行)
+-   標籤需按照字母排序, 然而 `@since` 必填.
 
 
 ```php
@@ -249,7 +249,7 @@ function jimport($path)
 }
 ```
 
-If a function definition goes over multiple lines, all lines must be indented with one tab and the closing brace must go on the same line as the last parameter.
+如果多行參數所有段行第一個參數需縮排, 結束刮續需跟最後個參數同一行
 
 
 ```php
