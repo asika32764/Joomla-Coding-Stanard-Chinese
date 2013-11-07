@@ -1,8 +1,13 @@
 ## Comments
+## 註解
 
 This chapter covers inline commenting in more detail. Inline comments are all comments not included in doc blocs. The goal of in line commenting is to explain code in context. Such explanation may take many different forms.
 
+此章節將告訴您在程式碼中寫入詳細的文字註解。而在程式碼中的註解文字並不能加以插入文件區塊。為該程式碼下註解的目的就是解釋該段的程式碼的運作跟用途。
+
 Comments that are written in a readable and narrative style, especially when explaining a complex process, are encouraged. In general they should be placed close to the code explained rather than before the entire block of code.
+
+註解能用可人為且易閱讀的方式去述敘該程式碼中複雜的運算，幫助瞭解程式碼之間的運作關係，下註解是值德鼓勵去實行的美德。
 
 Comments should be as sentence like as possible, which is to say that they should be complete and readable, not in short hand.
 
