@@ -186,15 +186,15 @@ $options = array(
 -   簡易說明 (選填, 除非超過兩個以上類別或方法) 結束空一行.
 -   完整說明 (選填) 結束空一行.
 -   `@category` (選填)
--   `@package` (選填, 如果只有這份程式碼可不填)
+-   `@package` (通常是選填, 但如果檔案只包含程序邏輯(無類別)則必填)
 -   `@subpackage` (選填)
--   `@author` (選填, 但只允許在非的Joomla源文件，例如，包括第三方庫)
+-   `@author` (選填, 但只允許在非的Joomla源文件，例如，包括第三方函式庫例如 Geshi)
 -   `@copyright` (必填)
--   `@license` (必填且必須是兼容的Joomla許可證)
+-   `@license` (必填且必須是相容於 Joomla 所使用的授權條款)
 -   `@deprecated` (選填)
 -   `@link` (選填)
 -   `@see` (選填)
--   `@since` (通常是選填，但時所需的文件只包含程序代碼)
+-   `@since` (通常是選填，但如果檔案只包含程序邏輯(無類別)則必填)
 
 ```
 /**
@@ -205,36 +205,35 @@ $options = array(
  */
 ```
 
-## 方法呼叫
+## 函式呼叫
 
-呼叫方法時, 方法名稱跟參數括號中不能有空白, 而第一個帶入參數也不得有空白; 每個參數逗點後一個空白隔開 (如果有的話), 最後一個參數跟括號沒有空格. 參數帶值等號前後需有空白. 可以多行對齊.
+呼叫函式時, 函式名稱跟參數括號中不能有空白, 而第一個帶入參數也不得有空白; 每個參數逗點後一個空白隔開 (如果有的話), 最後一個參數跟括號沒有空格. 參數帶值等號前後需有空白. 可以多行對齊.
 
 ```php
-// 單方法呼叫
+// 單函式呼叫
 $foo = bar($var1, $var2);
 
-// 多方法呼叫
+// 多函式呼叫
 $short  = bar('short');
 $medium = bar('medium');
 $long   = bar('long');
 ```
 
-## 函數定義
-## Function Definitions
+## 函式定義
 
-函數定義需開始並獨立於一新行，開始與結束的括號也需分別被放置於一新行。在負責處理回傳值的程式碼前應插入一空行。
+函式定義需開始並獨立於一新行，開始與結束的括號也需分別被放置於一新行。在負責處理回傳值的程式碼前應插入一空行。
 
 函數定義必須包含註解說明，根據本文件中的註解章節所規範之規則予以撰寫。
 
 -   簡易說明 (必要，結束需空一行)
 -   完整說明 (選填，結束需空一行)
--   `@param` (若function有參數則此欄位為必要，並於最後一個`@param`標簽之後新增一空行)
+-   `@param` (若函式有參數則此欄位為必要，並於最後一個`@param`標簽之後新增一空行)
 -   `@return` (必要，結束需空一行)
--   其餘標簽依據字母順序排列，需注意@since標簽永遠為必要。
+-   其餘標簽依據字母順序排列，需注意 @since 標籤永遠為必要。
 
 ```php
 /**
- * A utility class.
+ * An utility class.
  *
  * @package     Joomla.Platform
  * @subpackage  XBase
@@ -251,7 +250,7 @@ function jimport($path)
 }
 ```
 
-如果一個函數定義橫跨數行，第二行起的每一行皆需以一個tab作縮排，結束括號需與最後一個參數存在於同一行。
+如果一個函數定義橫跨數行，第二行起的每一行皆需以一個 tab 作縮排，結束括號需與最後一個參數存在於同一行。
 
 ```php
 function fooBar($param1, $param2,
@@ -263,7 +262,7 @@ function fooBar($param1, $param2,
 
 ## 類別定義
 
-類別定義需開始並獨立於一新行，開始與結束的括號也需被分別放置於一新行。類別方法(Class Methods)需根據函數定義標準來撰寫。類別的屬性及方法需根據物件導向(OOP)標準適當宣告(使用適合的public, protected, private 和 static等屬性)
+類別定義需開始並獨立於一新行，開始與結束的括號也需被分別放置於一新行。類別方法(Class Methods)需根據函數定義標準來撰寫。類別的屬性及方法需根據物件導向(OOP)標準適當宣告(使用適合的 public, protected, private 和 static 等屬性)
 
 類別的定義、屬性及方法皆需撰寫對應的註解區塊(DocBlock)，根據接下來的準則規範。
 
@@ -296,11 +295,10 @@ function fooBar($param1, $param2,
 ### 類別方法註解區塊
 
 類別方法註解區塊是依據PHP函式之規則做撰寫(如上述)。
-The DocBlock for class methods follows the same convention as for PHP functions (see above).
 
 ```php
 /**
- * A utility class.
+ * An utility class.
  *
  * @package     Joomla.Platform
  * @subpackage  XBase
@@ -393,9 +391,9 @@ Class variables should be set to null or some other appropriate default value.
 
 例外處理應當只用於錯誤處理上。
 
-下面的章節將指出如何照語意使用 [SPL exceptions](http://php.net/manual/en/spl.exceptions.php)。
+下面的章節將指出如何照語意使用 [PHP 標準函式庫 (SPL) 的 Exceptions](http://php.net/manual/en/spl.exceptions.php)。
 
-### 邏輯例外
+### 邏輯例外 LogicException
 
 在 API 的使用方式上發生的明確問題會丟出 LogicException 的例外。例如：如果有個依賴參數失效時（你試圖操作一個未被載入的物件）。
 
@@ -415,7 +413,7 @@ Class variables should be set to null or some other appropriate default value.
 
 #### DomainException
 
-該例外和 InvalidArgumentException 類似，但會在一數值未依附在一已定義的有效資料群的情形下丟出該例外。例如：試圖載入一個"mongodb"的資料庫引擎，但該引擎無法使用在 API 下。
+該例外和 InvalidArgumentException 類似，但會在一數值未依附在一已定義的有效資料群集的情形下丟出該例外。例如：試圖載入一個"mongodb"的資料庫引擎，但該引擎尚未在 API 中實作。
 
 #### LengthException
 
@@ -425,9 +423,9 @@ Class variables should be set to null or some other appropriate default value.
 
 該例外較少被實際的應用，但可在存取一個非法的索引值時丟出該例外。
 
-### Runtime 例外
+### 執行期例外 RuntimeException
 
-在外部實體或環境造成你無法控制的問題所產生的錯誤輸入時丟出 RuntimeException 的例外。當一個錯誤的產生不能明確地被判斷出來時，預設丟出該例外。例如：你試圖連到資料庫但資料庫卻無法使用 (伺服器掛掉之類的)。另一個例子可能為 SQL 查詢語句的錯誤。
+當外部實體或環境造成你無法控制的問題因而產生錯誤時，便丟出 RuntimeException 的例外。當一個錯誤的產生不能明確地被判斷出來時，預設丟出該例外。例如：你試圖連到資料庫但資料庫卻無法使用 (伺服器掛掉之類的)。另一個例子可能為 SQL 查詢語句的錯誤。
 
 #### UnexpectedValueException
 
