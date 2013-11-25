@@ -163,19 +163,21 @@ $options = array(
 
 ### 文件區塊註解
 
-Documentation headers for PHP and Javascript code in files, classes, class properties, methods and functions, called the docblocks, follow a convention similar to JavaDoc or phpDOC.
+在 PHP、Javascript、檔案中的所有類別、成員屬性、方法與函式，皆需要區塊註解，並遵循 JavaDoc 或 phpDoc 的約定。
 
-These "DocBlocks" borrow from the PEAR standard but have some variations specific for the Joomla Framework.
+這些 "區塊註解 (DocBlocks)" 從 PEAR 引用而來，但也為了 Joomla Framework 做了一點改變。
 
-Whereas normal code indenting uses real tabs, all whitespace in a Docblock uses real spaces. This provides better readability in source code browsers. The minimum whitespace between any text elements, such as tags, variable types, variable names and tag descriptions, is two real spaces. Variable types and tag descriptions should be aligned according to the longest Docblock tag and type-plus-variable respectively.
+雖然一般的縮排皆使用標準 Tab 來縮進，但區塊註解中，我們使用空格來排版，這提供了原始碼更優良的可讀性。任何文字元素，如標籤、變數的類型、變數名稱與標籤描述的最小距離必須是兩個空格。變數類型和標籤說明應分別按照最長的標籤和變數類型、變數描述對齊。
 
-If the `@package` tag is used, it will be "Joomla.Platform".
+如果使用了 `@package` 標籤，必須是 "Joomla.Platform"。
 
-If the `@subpackage` tag is used, it is the name of the top level folder under the /joomla/ folder. For example: Application, Database, Html, and so on.
+除果使用了 `@subpackage` ，必須是 /joomla/ 資料夾下的頂層目錄名稱，例如: Application, Database, Html 等等。
 
-Code contributed to the Joomla project that will become the copyright of the project is not allowed to include @author tags. You should update the contribution log in CREDITS.php. Joomla's philosophy is that the code is written "all together" and there is no notion of any one person "owning" any section of code. The `@author` tags are permitted in third-party libraries that are included in the core libraries.
+> 註: 在 Joomla Framework 中，不再使用 `@package` 與 `@subpackage`。
 
-Files included from third party sources must leave DocBlocks intact. Layout files use the same DocBlocks as other PHP files.
+貢獻給 Joomla 的程式碼，將成為專案的資產，不允許擁有 `@author` 標籤。你應該在 CREDITS.php 更新貢獻紀錄。Joomla 的理念是這樣的，所有的程式是一起發展編寫出來的，並沒有任何一個人擁有任何代碼中的一個部分。不過 `@author` 標籤允許使用在被包含進核心函式庫的第三方函式庫。
+
+從第三方函式庫引入的檔案，其區塊註解必須完好無損。Layout 的檔案使用跟其他 PHP 檔案一樣的區塊註解。
 
 ### 檔案文件標頭註解
 
