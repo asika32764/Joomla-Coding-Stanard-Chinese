@@ -332,23 +332,23 @@ class JClass extends JObject
 }
 ```
 
-## Naming Conventions
+## 命名慣例
 
-### Classes
+### 類別
 
-Classes should be given descriptive names. Avoid using abbreviations where possible. Class names should always begin with an uppercase letter and be written in CamelCase even if using traditionally uppercase acronyms (such as XML, HTML). One exception is for Joomla Framework classes which must begin with an uppercase 'J' with the next letter also being uppercase.
+類別應給予描述性的名稱。在可能的情況下應避免縮寫。類別名稱總是以一個大寫字母開頭，且採用駝峰式 (CamelCase) 命名法則，即便名字中包含傳統上常用大寫的字彙(如 HTML, XML)。唯一例外是必須由 J 開頭的核心類別後面可接上一個大寫字母。
 
-For example:
+範例:
 
 -   JHtmlHelper
 -   JXmlParser
 -   JModel
 
-### Functions and Methods
+### 函式與方法
 
-Functions and methods should be named using the "studly caps" style (also referred to as "bumpy case" or "camel caps"). The initial letter of the name is lowercase, and each letter that starts a new "word" is capitalized. Function in the Joomla framework must begin with a lowercase 'j'.
+函式與方法採用 "studly caps" 風格 (也稱作 "bumpy case" 或 "camel caps")。 名稱起始的字母必須是小寫，而每個新單字的首個字母為大寫。而在 Joomla 框架中的函式必須由小寫字母 'j' 開頭。
 
-For example:
+範例:
 
 -   connect();
 -   getData();
@@ -356,9 +356,9 @@ For example:
 -   jImport();
 -   jDoSomething();
 
-Private class members (meaning class members that are intended to be used only from within the same class in which they are declared) are preceded by a single underscore. Properties are to be written in underscore format (that is, logical words separated by underscores) and should be all lowercase.
+類別的私有成員屬性 (就是說只被用在他所宣告出來的類別內部的成員屬性) ，開頭有一個底線。屬性名稱採用底線命名風格 (也就是說，單字被底線區  隔開來)，且應該全部小寫。
 
-For example:
+範例:
 
 ```php
 class JFooHelper
@@ -373,19 +373,19 @@ class JFooHelper
 }
 ```
 
-### Constants
+### 常數
 
-Constants should always be all-uppercase, with underscores to separate words. Always prefix constants with `J` and use common sense when completing the name to keep it from getting unnecessarily long. You *should* use the name of the class/package they are used in. For example, the constants used by the `Joomla\Application\Web\Router` class could begin with `JROUTE_`.
+常數應永遠為大寫，並用底線分隔單字。總是在常數前加上 `J` 且運用一些眾人常識和慣例來避免常數名稱太長。你 *應該* 使用類別或封包 (package) 中已經使用的名稱。例如在 'Joomla\Application\Web\Router' 中的常數，以 `JRoute_` 開頭。
 
-### Global Variables
+### 全域變數
 
-Do not use global variables. Use static class properties or constants instead of globals.
+不要使用全域變數。採用靜態類別與屬性或常數替代。
 
-### Regular Variables and Class Properties
+### 一般情況下的變數與類別屬性
 
-Regular variables, follow the same conventions as function.
+一般情況下的變數，遵循函式的慣例。
 
-Class variables should be set to null or some other appropriate default value.
+類別的屬性應該設為 null 或其他適當的預設值。
 
 ## 例外處理
 
