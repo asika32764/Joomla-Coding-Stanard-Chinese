@@ -73,7 +73,7 @@ Lets means permits or allows to:
 ```
 
 Let’s is a contraction for let us and means we are going to do this now:
-讓`我們嚴儘的為我們和這樣的意思來做:
+讓`我們的縮短為我們和這樣的意思來做:
 
 ```php
 // Let's validate the field
@@ -92,7 +92,7 @@ Its is the possessive form of it:
 ```
 
 It’s is a contraction of it is
-它是它的一個嚴謹
+它`是它的一個縮寫
 
 ```php
 // It's time to save
